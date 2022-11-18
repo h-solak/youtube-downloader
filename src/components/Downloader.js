@@ -43,11 +43,17 @@ const Downloader = () => {
     <Row className="w-100 m-0 justify-content-center py-3">
       <Col sm="12" className="text-center fs-4 fw-bold mb-3 flex-center gap-1">
         <FaYoutube style={{ color: "#ff0000" }} />{" "}
-        <p className="m-0">
+        <p
+          className="m-0 pointer"
+          onClick={() => window.open("https://h-solak.github.io", "_blank")}
+        >
           <span className="text-white" style={{ fontWeight: "600" }}>
             Youtube to MP4{" "}
           </span>
-          <span className="fs-8 text-secondary">v1</span>
+          <span className="fs-8 text-secondary">v1 </span>
+          <span className="fs-8 text-secondary fw-bold d-none d-sm-inline">
+            by Hasan Solak
+          </span>
         </p>
       </Col>
       <Col
@@ -82,15 +88,22 @@ const Downloader = () => {
         <p className="m-0 text-secondary fs-8 mt-2 d-flex align-items-s gap-1">
           <FaInfoCircle className="d-none d-sm-inlinetext-white fs-6" />{" "}
           <span className="">
-            Video id have to be at the end of the url like
-            https://www.youtube.com/watch?v=dQw4w9WgXcQ or
-            https://youtu.be/dQw4w9WgXcQ
+            Video id has to be at the end of the url like
+            https://www.youtube.com/watch?v=
+            <span className="fw-bold">dQw4w9WgXcQ</span> or https://youtu.be/
+            <span className="fw-bold">dQw4w9WgXcQ</span>
           </span>
         </p>
       </Col>
       {resData?.title && (
         <Row className="m-0 mt-3 p-0 justify-content-center">
-          <Col sm="12" md="6" lg="6" className="bg-dark rounded-3">
+          <Col
+            sm="12"
+            md="6"
+            lg="6"
+            className="bg-dark"
+            style={{ borderRadius: "6px 6px 0px 0px" }}
+          >
             <div
               className="d-flex align-items-center flex-column flex-sm-row pointer rounded-3 p-1"
               onClick={() =>
@@ -122,12 +135,7 @@ const Downloader = () => {
             </div>
           </Col>
           <Row className="m-0 p-0 justify-content-center">
-            <Col
-              sm="12"
-              md="6"
-              className="text-center mt-3 bg-dark p-3"
-              style={{ borderRadius: "6px 6px 0px 0px" }}
-            >
+            <Col sm="12" md="6" className="text-center mt-0 bg-dark px-3 pb-3">
               <span className="fw-bold text-white">
                 Video <span className="fs-8">(mp4)</span>
               </span>
@@ -169,10 +177,9 @@ const Downloader = () => {
             <Col
               sm="12"
               md="6"
-              className="text-center bg-dark p-3"
+              className="text-center bg-dark pb-3"
               style={{
                 borderRadius: "0px 0px 6px 6px",
-                borderTop: "2px solid rgba(255,255,255,0.4)",
               }}
             >
               <span className="fw-bold text-white">Audio</span>
