@@ -1,13 +1,160 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/*
+#8e44ad
+*/
+
+body {
+    background-color: #000000;
+}
+
+.app-container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/*Component Spesific*/
+
+input {
+    padding: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0px 0px 8px;
+}
+
+button {
+    font-weight: 500;
+    padding: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0px 8px 8px 0px;
+    background-color: #3d3d3d;
+    color: #ecf0f1;
+    transition: 0.1s ease;
+}
+
+button:hover {}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.video-thumbnail {
+    width: 250px;
+}
+
+.link-btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #3d3d3d;
+    color: #ecf0f1;
+    transition: 0.1s ease;
+}
+
+.link-btn:active {
+    transform: scale(0.95);
+}
+
+
+/*Essentials*/
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*Re-usables*/
+
+.fs-7 {
+    font-size: 14px;
+}
+
+.fs-8 {
+    font-size: 12px;
+}
+
+.bg-glass {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.default {
+    cursor: default;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 0px;
+    /*to prevent from horizontal scroll, I set the height to 0px*/
+}
+
+::-webkit-scrollbar-track {
+    background: #212529;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(143, 143, 143);
+    border-radius: 24px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/*Animations*/
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

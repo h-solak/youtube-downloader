@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Row, Col } from "reactstrap";
+import Downloader from "./components/Downloader";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Toaster position="top-center" reverseOrder={false} />
+      <Row className="app-container m-0 flex-center">
+        <Downloader />
+      </Row>
+    </>
   );
 }
 
