@@ -28,7 +28,6 @@ const Downloader = () => {
         .then(function (response) {
           if (response.data.status === "ok") {
             setResData(response.data);
-            console.log("1", resData);
           } else {
             toast.error(response.data.msg);
             setResData({});
@@ -39,14 +38,6 @@ const Downloader = () => {
       toast.error("Invalid Url");
     }
   };
-
-  useEffect(() => {
-    if (resData?.title) {
-      // const heh = JSON.parse(resData?.link);
-      console.log("2", resData?.link);
-      console.log("3", resData?.link["17"][0]);
-    }
-  }, [resData]);
 
   return (
     <Row className="w-100 m-0 justify-content-center py-3">
@@ -99,7 +90,7 @@ const Downloader = () => {
       </Col>
       {resData?.title && (
         <Row className="m-0 mt-3 p-0 justify-content-center">
-          <Col sm="12" md="6" lg="6" className="bg-dark">
+          <Col sm="12" md="6" lg="6" className="bg-dark rounded-3">
             <div
               className="d-flex align-items-center flex-column flex-sm-row pointer rounded-3 p-1"
               onClick={() =>
@@ -111,7 +102,7 @@ const Downloader = () => {
                 src={resData?.thumb}
                 alt="video thumbnail"
               />
-              <div className="mt-2 mt-sm-0 p-4 d-flex align-items-start flex-column">
+              <div className="mt-sm-0 p-4 d-flex align-items-start flex-column">
                 {resData?.title?.length > 60 ? (
                   <span className="fw-bold text-white">
                     {resData?.title?.slice(0, 60)}...
@@ -137,7 +128,9 @@ const Downloader = () => {
               className="text-center mt-3 bg-dark p-3"
               style={{ borderRadius: "6px 6px 0px 0px" }}
             >
-              <span className="fw-bold text-white">Video (mp4)</span>
+              <span className="fw-bold text-white">
+                Video <span className="fs-8">(mp4)</span>
+              </span>
               {resData?.link["18"] ? (
                 <a
                   href={resData?.link["18"] && resData?.link["18"][0]}

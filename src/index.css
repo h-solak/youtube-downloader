@@ -37,10 +37,13 @@ button {
     transition: 0.1s ease;
 }
 
-button:hover {}
+a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
 
 button:active {
     transform: scale(0.95);
+    background-color: #2a2a2a;
 }
 
 .video-thumbnail {
@@ -54,12 +57,14 @@ button:active {
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     background-color: #3d3d3d;
-    color: #ecf0f1;
+    color: #fff;
     transition: 0.1s ease;
 }
 
 .link-btn:active {
     transform: scale(0.95);
+    background-color: white;
+    color: #3d3d3d;
 }
 
 
